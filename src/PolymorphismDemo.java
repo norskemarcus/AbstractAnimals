@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class PolymorphicDemo {
+public class PolymorphismDemo {
     public static void main(String[] args) {
         // create some cats and dogs
         Cat cat1 = new Cat("Mandu");
