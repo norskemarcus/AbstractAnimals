@@ -21,11 +21,29 @@ public class PolymorphismDemo {
         Random rand = new Random();
 
         // Go through all animals, make them eat and sleep
-        for(Animal animal : animals) {
-            System.out.println(animal);
+       // Animal ani1 = new Animal("Dyr"); // dette dyret kan ikke spise, bare sove! Mangler også en toString i Animals
+        //animals.add(ani1);
+
+        for(Animal animal : animals) { // behandler de polymorft. det er behov for en tom metode i Animal
+            // henviser til alle Animals
+            System.out.println(animal); // kalder toString automatisk
+            animal.makeNoise();
+
             animal.eat(foods[rand.nextInt(foods.length)]); // eat random food
             animal.sleep(rand.nextInt(5));                 // sleep up to 5 hours
             // TODO: What if we want them to wag their tail or hiss?
+
+
+            if(animal instanceof Cat cat){ // hvis man skal bruge en specifik metode hos en subklasse
+                // eller skrive cat efter Cat efter instanceOf! Smart
+             //   Cat cat = (Cat)animal;
+               cat.hiss();
+                // eller:
+                // ((Cat)animal).hiss(); // at caste!
+
+            }
+
+
             System.out.println();
         }
     }
